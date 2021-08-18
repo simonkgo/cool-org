@@ -1,0 +1,22 @@
+syntax = 'proto3';
+package usersproto; //namespace;
+
+service UserService {
+  rpc all(Empty) returns (UsersResponse){};
+};
+/**
+  UsersRequest represent a query for all users;
+ */
+
+message Empty{
+}
+
+message UserDetails {
+  string firstName = 1;
+  string lastName = 2;
+};
+
+message UsersResponse {
+  repeated UserDetails users = 1;
+};
+

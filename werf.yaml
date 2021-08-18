@@ -1,0 +1,6 @@
+project: restapi-users
+configVersion: 1
+
+---
+image: cool-restapi-users
+dockerfile: Dockerfile

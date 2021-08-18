@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cool-users-sql
+  labels:
+    app: cool-users-sql
+spec:
+  selector:
+    matchLabels:
+      app: cool-users-sql
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: cool-users-sql
+    spec:
+      containers:
+        - name: cool-users-sql
+          image: simonjs/cool:latest
+          ports:
+            - containerPort: 8080
+          resources:
+              requests:
+                cpu: 250m
+              limits:
+                cpu: 300m
